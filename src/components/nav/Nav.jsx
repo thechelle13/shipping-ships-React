@@ -8,13 +8,13 @@ export const NavBar = () => {
     <ul className="navbar">
        
         <li className="navbar-item">
-            <Link to="/tickets">Ships</Link>
+            <Link to="/ships">Ships</Link>
         </li>
         <li className="navbar-item">
-            <Link to="/customers">Haulers</Link>
+            <Link to="/haulers">Haulers</Link>
         </li>
         <li className="navbar-item">
-           <Link to="/employees">Docks</Link>
+           <Link to="/docks">Docks</Link>
         </li>
        
         
