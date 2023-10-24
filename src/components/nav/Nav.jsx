@@ -17,22 +17,6 @@ export const NavBar = () => {
            <Link to="/docks">Docks</Link>
         </li>
        
-        
-        {/* {localStorage.getItem("honey_user") ? (
-            <li className="navbar-item navbar-logout">
-                <Link
-                    className="navbar-link"
-                    to=""
-                    onClick={() => {
-                        localStorage.removeItem("honey_user")
-                        navigate("/", { replace: true })
-                    }}
-                    >
-                        Logout
-                    </Link>
-            </li>
-        ) : ( ""
-        )} */}
     </ul>
     )
 }

@@ -1,19 +1,8 @@
 import { Route } from "react-router-dom";
-import { useState, useEffect } from "react";
 
 export const ApplicationViews = () => {
 
- 
-    // const [currentUser, setCurrentUser] = useState({})
-    
-    
-    // useEffect(() => {
-    //   const localHoneyUser = localStorage.getItem("honey_user")
-    //   const honeyUserObject = JSON.parse(localHoneyUser)
-    //   setCurrentUser(honeyUserObject)
-    // }, [] )
-  
-  
+   
     return <Routes>
               <Route 
               path="/" 
