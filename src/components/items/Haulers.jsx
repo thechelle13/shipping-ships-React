@@ -1,6 +1,15 @@
 import { useState, useEffect } from "react"
+import { getAllHaulers } from "../../services/HaulersService"
 
 
 export const Haulers = () => {
-    return
+    const [haulers, setHaulers] = useState([])
+
+    useEffect(()=> {
+        getAllHaulers().then((haulerArray) => {
+            setHaulers(haulerArray)
+        })
+    }, [])
+
+    return <>{<Haulers/>}</>
 }
