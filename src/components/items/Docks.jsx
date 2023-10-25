@@ -1,6 +1,17 @@
 import { useState, useEffect } from "react"
+import { getAllDocks } from "../../services/DocksService"
 
 
 export const Docks = () => {
-    return
+
+    const [docks, setDocks] = useState([])
+
+    useEffect(()=> {
+        getAllDocks().then((dockArray) => {
+            setDocks(dockArray)
+        })
+    }, [])
+
+    return <>{<Docks/>}</>
+
 }
