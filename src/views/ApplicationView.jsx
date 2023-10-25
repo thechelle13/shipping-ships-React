@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 export const ApplicationViews = () => {
 
  
-    const [currentUser, setCurrentUser] = useState({})
+    // const [currentUser, setCurrentUser] = useState({})
     
     
     // useEffect(() => {
@@ -29,7 +29,7 @@ export const ApplicationViews = () => {
               {/* <Route path="ships" element={<Ships currentUser={currentUser}/> }/> */}
               <Route path="ships">
                 <Route index element={<Ships />} />
-                <Route path=":shipId" element={<DeleteShip />} />
+                {/* <Route path=":shipId" element={<DeleteShip />} /> */}
               </Route>
               <Route path="haulers">
                 <Route index element={<Haulers />} />
