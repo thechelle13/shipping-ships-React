@@ -1,3 +1,3 @@
 export const getAllShips = () => {
-    return
+    return fetch ('http://localhost:8000/ships?_expand=hauler').then((res)=> res.json())
 }

@@ -11,5 +11,10 @@ export const Haulers = () => {
         })
     }, [])
 
-    return <>{<Haulers/>}</>
+    return <div>
+    <header>Haulers</header>
+    {haulers.map((hauler)=> {
+        return <div key={hauler.id}>{hauler.name}</div>
+    })}
+    </div>
 }
