@@ -2,23 +2,18 @@ import { Route } from "react-router-dom";
 
 export const ApplicationViews = () => {
 
-   
     return <Routes>
               <Route 
               path="/" 
               element={
                 <>
-                <NavBar />
-              
+                <NavBar />              
                 <Outlet />
                 </>
               }
-              >
-               
-              {/* <Route path="ships" element={<Ships currentUser={currentUser}/> }/> */}
+              >              
               <Route path="ships">
-                <Route index element={<Ships />} />
-                {/* <Route path=":shipId" element={<DeleteShip />} /> */}
+                <Route index element={<Ships />} />   
               </Route>
               <Route path="haulers">
                 <Route index element={<Haulers />} />
