@@ -1,18 +1,14 @@
-import { Routes, Route } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import { ApplicationViews } from './views/ApplicationView'
 import './App.css'
 
 
 export const App = () => {
+  
   return (
     <Routes>
       
-      <Route path="*" element={
-        <Authorized>
-          <ApplicationViews />
-        </Authorized>
-      } 
-      />
+      <Route path="*" element={<ApplicationViews /> }  />
     </Routes>
   )
 }
