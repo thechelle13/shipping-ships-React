@@ -1,4 +1,10 @@
-import { Route } from "react-router-dom";
+import { Outlet, Route, Routes } from "react-router-dom";
+import { Ships } from "../components/items/Ships";
+import { Haulers } from "../components/items/Haulers";
+import { EditHauler } from "../components/forms/EditHauler";
+import { Docks } from "../components/items/Docks";
+import { NavBar } from "../components/nav/Nav";
+// import { ListAll } from "../components/items/ListAll";
 
 export const ApplicationViews = () => {
 
@@ -11,7 +17,10 @@ export const ApplicationViews = () => {
                 <Outlet />
                 </>
               }
-              >              
+              > 
+              {/* <Route path="listAll">
+                <Route index element={<ListAll />} />   
+              </Route>              */}
               <Route path="ships">
                 <Route index element={<Ships />} />   
               </Route>
