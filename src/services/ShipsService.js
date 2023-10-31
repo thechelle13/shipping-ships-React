@@ -3,7 +3,7 @@ export const getAllShips = () => {
 }
 
 export const deleteShip = (shipId) => {
-    return fetch(`http://your-api-url/ships/${shipId}`, {
+    return fetch(`http://localhost:8000/ships/${shipId}`, {
       method: "DELETE",
     });
   };
