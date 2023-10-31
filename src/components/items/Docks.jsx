@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react"
 import { getAllDocks } from "../../services/DocksService"
+import { getAllHaulers } from "../../services/HaulersService"
 
 
 export const Docks = () => {
 
     const [docks, setDocks] = useState([])
+    const [haulers, setHaulers] = useState([])
 
     useEffect(()=> {
         getAllDocks().then((dockArray) => {
@@ -12,23 +14,31 @@ export const Docks = () => {
         })
     }, [])
 
+    useEffect(()=> {
+        getAllHaulers().then((haulerArray) => {
+            setHaulers(haulerArray)
+        })
+    }, [])
+
     return  (
-        <div>
+        <section>
           <header>Docks</header>
           <ul>
           {docks.map((dock) => (
-            <div key={dock.id}>
+            <li key={dock.id}>
               <h2>Location: {dock.location}</h2>
               <p> Capacity: {dock.capacity}</p>
-             
-                {/* {dock.haulers.map((hauler) => (
+              <ul>
+              {haulers
+                .filter((hauler) => hauler.dock_id === dock.id) // Filter haulers by dock_id
+                .map((hauler) => (
                   <li key={hauler.id}>{hauler.name}</li>
                 ))}
-               */}
-            </div>
+            </ul>
+            </li>
           ))}
              </ul>
-        </div>
+        </section>
       );
 }
 

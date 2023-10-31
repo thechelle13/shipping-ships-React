@@ -22,9 +22,11 @@ export const ApplicationViews = () => {
         <Route path="/" element={<ListAll />} />
         
         <Route path="ships" element={<Ships />} />
+
         <Route path="haulers" element={<Haulers />}/>
-          <Route index element={<Haulers />} />
-          <Route path="edit/:haulerId" element={<EditHauler />} />
+         
+          <Route path="EditHauler" element={<EditHauler />} />
+
         <Route path="docks" element={<Docks />} />
       </Route>
     </Routes>

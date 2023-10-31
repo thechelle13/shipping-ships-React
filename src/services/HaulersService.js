@@ -1,5 +1,5 @@
 export const getAllHaulers = () => {
-    return fetch ('http://localhost:8000/haulers').then((res)=> res.json())
+    return fetch ('http://localhost:8000/haulers/?_embed=dock').then((res)=> res.json())
 }
 
 export const getHaulerById = (id) => {
@@ -7,7 +7,7 @@ export const getHaulerById = (id) => {
 }
 
 export const haulerEdited = (haulers) => {
-    return fetch(`http://localhost:8000/haulers/${haulers.id}`, {
+    return fetch(`http://localhost:8000/haulers${haulers.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
