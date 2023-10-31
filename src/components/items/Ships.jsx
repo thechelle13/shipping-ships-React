@@ -1,40 +1,41 @@
-import { useState, useEffect } from "react"
-import { getAllShips } from "../../services/ShipsService"
-import { useNavigate } from "react-router-dom"
-
+import React, { useState, useEffect } from "react";
+import { getAllShips, deleteShip } from "../../services/ShipsService";
+import './items.css';
 
 export const Ships = () => {
-    const [ships, setShips] = useState([])
-    const [delShip, setDelShip] =useState([])
-    const Navigate = useNavigate()
+  const [ships, setShips] = useState([]);
 
-    useEffect(()=> {
-        getAllShips().then((shipsArray) => {
-            setShips(shipsArray)
-        })
-    }, [])
+  useEffect(() => {
+    getAllShips().then((shipsArray) => {
+      setShips(shipsArray);
+    });
+  }, []);
 
-    const handleDelete = (event) => {
-        event.preventDefault();
-    
-        const ShipDel = {
-            id: delShip, 
-        };
-        
-        shipDelete(delShip.id).then(() => {
-            Navigate(`/Ships`);
-        });
-        };
+  const handleDelete = (shipId) => {
+  
+    deleteShip(shipId)
+      .then(() => {
+       
+        setShips((prevShips) => prevShips.filter((ship) => ship.id !== shipId));
+      })
+      .catch((error) => {
+        console.error("Error deleting ship:", error);
+      });
+  };
 
-    return <div>
-    <header>Ships</header>
-    {ships.map((ship)=> {
-        return <div key={ship.id}>{ship.name}</div>
-    })}
-    <button className="form-btn" onClick={handleDelete}>Delete</button>
-
-
-    
-        
+  return (
+    <div>
+      <header>Ships</header>
+      <ul>
+        {ships.map((ship) => (
+          <li key={ship.id}>
+            {ship.name}
+            <button className="form-btn" onClick={() => handleDelete(ship.id)}>
+              Delete
+            </button>
+          </li>
+        ))}
+      </ul>
     </div>
-}
+  );
+};
