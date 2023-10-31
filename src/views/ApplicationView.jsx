@@ -18,7 +18,9 @@ export const ApplicationViews = () => {
           </>
         }
       >
-        <Route exact path="/" element={<ListAll />} />
+         <Route index element={<ListAll />} />
+        <Route path="/" element={<ListAll />} />
+        
         <Route path="ships" element={<Ships />} />
         <Route
           path="haulers"
