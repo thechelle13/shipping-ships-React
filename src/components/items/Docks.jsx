@@ -12,11 +12,20 @@ export const Docks = () => {
         })
     }, [])
 
-    return <div>
-    <header>Docks</header>
-    {docks.map((dock)=> {
-        return <div key={dock.id}>{dock.name}</div>
-    })}
-    </div>
-
+    return  (
+        <div>
+          <header>Docks</header>
+          {docks.map((dock) => (
+            <div key={dock.id}>
+              <h2>Location: {dock.location}</h2>
+              <p> Capacity: {dock.capacity}</p>
+              <ul>
+                {dock.haulers.map((hauler) => (
+                  <li key={hauler.id}>{hauler.name}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      );
 }
