@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { getAllHaulers } from "../../services/HaulersService"
+import './items.css'
 
 
 export const Haulers = () => {
@@ -16,5 +17,6 @@ export const Haulers = () => {
     {haulers.map((hauler)=> {
         return <div key={hauler.id}>{hauler.name}</div>
     })}
+    <button>Edit</button>
     </div>
 }

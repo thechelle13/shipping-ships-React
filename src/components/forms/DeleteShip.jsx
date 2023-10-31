@@ -1,14 +1,14 @@
-export const DeleteShip = () => {
+// export const DeleteShip = () => {
 
-    const [ships, setShips] = useState([])
+//     const [ships, setShips] = useState([])
 
-    useEffect(()=> {
-        getAllShips().then((shipArray) => {
-            setShips(shipArray)
-        })
-    }, [])
+//     useEffect(()=> {
+//         getAllShips().then((shipArray) => {
+//             setShips(shipArray)
+//         })
+//     }, [])
 
 
 
-    return
-}
+//     return
+// }
