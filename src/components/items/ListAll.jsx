@@ -44,7 +44,7 @@ export const ListAll = () => {
       <div>
         <header>Docks</header>
         {docks.map((dock) => (
-          <div key={dock.id}>{dock.name}</div>
+          <div key={dock.location}>{dock.location}</div>
         ))}
       </div>
     </section>
