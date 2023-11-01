@@ -15,19 +15,24 @@ export const Haulers = () => {
         })
     }, [])
 
-    
+    const handleClick = () => {
+        Navigate('/EditHauler')
+    }
     
     return (
-    <div>
+    <section>
     <header>Haulers</header>
     <ul>
-    {haulers.map((hauler)=> {
-        <li key={hauler.id}>{hauler.name}
+    {haulers.map((hauler) => (
+          <li key={hauler.id}>{hauler.name}
+          <button className="form-btn" onClick={handleClick} >Edit</button>
+          </li>
+        ))}
     
-    <button className="form-btn" >Edit</button>
-    </li>
-    })}
+   
+    
+    
     </ul>
-    </div>
+    </section>
     )
 }

@@ -24,7 +24,7 @@ export const Ships = () => {
   };
 
   return (
-    <div>
+    <section>
       <header>Ships</header>
       <ul>
         {ships.map((ship) => (
@@ -36,6 +36,6 @@ export const Ships = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };

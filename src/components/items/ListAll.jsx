@@ -27,26 +27,26 @@ export const ListAll = () => {
       <header>Shipping Ships App</header>
       
 
-      <div>
+      <section>
         <header>Ships</header>
         {ships.map((ship) => (
           <div key={ship.id}>{ship.name}</div>
         ))}
-      </div>
+      </section>
 
-      <div>
+      <section>
         <header>Haulers</header>
         {haulers.map((hauler) => (
           <div key={hauler.id}>{hauler.name}</div>
         ))}
-      </div>
+      </section>
 
-      <div>
+      <section>
         <header>Docks</header>
         {docks.map((dock) => (
           <div key={dock.location}>{dock.location}</div>
         ))}
-      </div>
+      </section>
     </section>
   );
 };
