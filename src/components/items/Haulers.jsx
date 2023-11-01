@@ -17,7 +17,8 @@ export const Haulers = () => {
 
     
     
-    return <div>
+    return (
+    <div>
     <header>Haulers</header>
     <ul>
     {haulers.map((hauler)=> {
@@ -28,4 +29,5 @@ export const Haulers = () => {
     })}
     </ul>
     </div>
+    )
 }

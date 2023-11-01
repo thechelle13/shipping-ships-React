@@ -1,5 +1,5 @@
 export const getAllHaulers = () => {
-    return fetch ('http://localhost:8000/haulers').then((res)=> res.json())
+    return fetch ('http://localhost:8000/haulers?_expand=dock').then((res)=> res.json())
 }
 
 export const getHaulerById = (id) => {
